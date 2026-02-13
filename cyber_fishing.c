@@ -84,13 +84,21 @@ void save_game(CyberFishApp* app) {
 }
 
 void reset_game(CyberFishApp* app) {
-    app->credits = 0; app->buffer_lvl = 1; app->antenna_lvl = 1; app->lure_lvl = 1; app->current_world = 0; app->core_ver = 1;
-    for(int i=0; i<7; i++) { app->inv[i] = 0; app->discovered[i] = false; }
+    app->credits = 0; 
+    app->buffer_lvl = 1; 
+    app->antenna_lvl = 1; 
+    app->lure_lvl = 1; 
+    app->current_world = 0;
+    for(int i=0; i<7; i++) { 
+        app->inv[i] = 0; 
+        app->discovered[i] = false; 
+    }
     for(int i=0; i<5; i++) app->world_unlocked[i] = (i == 0);
 }
 
 void load_game(CyberFishApp* app) {
-    reset_game(app); 
+    reset_game(app);
+    app->core_ver = 1;
     Storage* storage = furi_record_open(RECORD_STORAGE);
     File* file = storage_file_alloc(storage);
     if(storage_file_open(file, SAVE_PATH, FSAM_READ, FSOM_OPEN_EXISTING)) {
@@ -356,6 +364,7 @@ int32_t cyber_fishing_app(void* p) {
                     if(all_found && event.key == InputKeyOk) {
                         app->core_ver++;
                         reset_game(app);
+                        save_game(app);
                         app->current_state = StateWaiting;
                         notification_message(notifications, &sequence_success);
                     }
