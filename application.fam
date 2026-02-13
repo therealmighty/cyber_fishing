@@ -6,10 +6,7 @@ App(
     stack_size=2 * 1024,
     fap_category="Games",
     fap_icon="cyber_fish_10px.png",
-    fap_description="A cyberpunk-themed fishing RPG for the Flipper Zero.",
-    fap_author="YourName",
-    fap_weburl="https://github.com/YourName/cyber_fishing",
+    fap_description="A cyberpunk-themed fishing RPG.",
     fap_version="1.0",
-
+    fap_icon_assets="images",
 )
-
