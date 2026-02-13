@@ -305,7 +305,8 @@ int32_t cyber_fishing_app(void* p) {
     notification_message(notifications, &sequence_boot);
     InputEvent event;
     int vib_rarity = 0;
-    while(1) {
+    bool running = true;
+    while(running) {
         FuriStatus status = furi_message_queue_get(app->event_queue, &event, 100);
         if(status == FuriStatusOk) {
             if(app->current_state == StateWaiting && (event.type == InputTypeShort || event.type == InputTypeLong)) {
@@ -323,8 +324,11 @@ int32_t cyber_fishing_app(void* p) {
             }
             if(event.type == InputTypeShort) {
                 if(event.key == InputKeyBack) {
-                    if(app->current_state == StateWaiting || app->current_state == StateSplash) break;
-                    app->current_state = StateWaiting;
+                    if(app->current_state == StateWaiting || app->current_state == StateSplash) {
+                        running = false;
+                    } else {
+                        app->current_state = StateWaiting;
+                    }
                 } else if(app->current_state == StateDevMenu) {
                     if(event.key == InputKeyDown) app->dev_cursor = (app->dev_cursor + 1) % 4;
                     else if(event.key == InputKeyUp) app->dev_cursor = (app->dev_cursor - 1 + 4) % 4;
