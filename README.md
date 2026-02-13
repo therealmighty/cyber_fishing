@@ -13,6 +13,7 @@ Persistent Save System: Progress is saved automatically to your SD card (/apps_d
 # 🛠️ Installation & Build
 Option 1: Build from Source (Recommended)
 Ensure you have ufbt installed:
+![test](./assets/cyber.PNG)
 
 1. Open CMD/Terminal.
 2. Enter pip install ufbt.
