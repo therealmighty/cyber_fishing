@@ -4,7 +4,7 @@ A cyberpunk-themed fishing RPG developed specifically for the **Flipper Zero**.
 
 In the year 2026, data is the only currency that matters. Cast your line into the digital stream, reel in rare packets, and upgrade your hardware to breach the Internal Kernel.
 
-![Logo](./assets/cyber.png)
+![Logo](./assets/cyber.PNG)
 
 ## ✨ Features
 * **5 Unique Sectors:** Travel from the Cyber Docks to the Void Sector.
