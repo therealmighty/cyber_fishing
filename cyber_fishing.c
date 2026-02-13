@@ -84,13 +84,13 @@ void save_game(CyberFishApp* app) {
 }
 
 void reset_game(CyberFishApp* app) {
-    app->credits = 0; app->buffer_lvl = 1; app->antenna_lvl = 1; app->lure_lvl = 1; app->current_world = 0;
+    app->credits = 0; app->buffer_lvl = 1; app->antenna_lvl = 1; app->lure_lvl = 1; app->current_world = 0; app->core_ver = 1;
     for(int i=0; i<7; i++) { app->inv[i] = 0; app->discovered[i] = false; }
     for(int i=0; i<5; i++) app->world_unlocked[i] = (i == 0);
-    save_game(app);
 }
 
 void load_game(CyberFishApp* app) {
+    reset_game(app); 
     Storage* storage = furi_record_open(RECORD_STORAGE);
     File* file = storage_file_alloc(storage);
     if(storage_file_open(file, SAVE_PATH, FSAM_READ, FSOM_OPEN_EXISTING)) {
@@ -104,10 +104,11 @@ void load_game(CyberFishApp* app) {
         storage_file_read(file, app->inv, sizeof(uint32_t) * 7);
         storage_file_read(file, app->discovered, sizeof(bool) * 7);
         storage_file_read(file, app->world_unlocked, sizeof(bool) * 5);
-    } else { app->core_ver = 1; reset_game(app); }
+    }
     storage_file_close(file);
     storage_file_free(file);
     furi_record_close(RECORD_STORAGE);
+    if(app->core_ver == 0) app->core_ver = 1;
 }
 
 void draw_logo(Canvas* canvas, int f) {
