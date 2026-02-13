@@ -16,6 +16,11 @@ In the year 2026, data is the only currency that matters. Cast your line into th
 
 ## 🛠️ How to Build
 Ensure you have `ufbt` installed.
+
+How to install ufbt
+1. Open CMD
+2. Enter `pip install ufbt`
+
 1. Clone the repo: `git clone https://github.com/YOUR_USERNAME/cyber_fishing.git`
 2. Connect your Flipper.
 3. Run: `ufbt launch`
