@@ -12,7 +12,7 @@ In the year 2026, data is the only currency that matters. Cast your line into th
 * **Prestige System:** Reformat your System Core to gain 25% sell bonuses.
 * **Hardware Upgrades:** Improve your Buffer, Antenna, and Lure.
 
-![Main Gameplay](./assets/cyber-fish.png)
+![Main Gameplay](./assets/cyber-fish.PNG)
 
 ## 🛠️ How to Build
 Ensure you have `ufbt` installed.
@@ -25,7 +25,7 @@ OR
 1. Download repo
 2. Transfer files to Flipper via qFlipper or Flipper mobile app.
 
-![Loading Screen](./assets/f.png)
+![Loading Screen](./assets/f.PNG)
 
 ## 🎮 Controls
 * **OK:** Cast line / Reel in / Confirm
@@ -34,4 +34,4 @@ OR
 * **LEFT:** Net Index (Collection)
 * **BACK:** Return to menu / Exit
 
-![A map in it!](./assets/Capture.png)
+![A map in it!](./assets/Capture.PNG)
