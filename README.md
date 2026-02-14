@@ -20,7 +20,7 @@ Ensure you have ufbt installed:
 1. Open CMD/Terminal.
 2. Enter pip install ufbt.
 
-1. Clone the repo: git clone https://github.com/YOUR_USERNAME/cyber_fishing.git.
+1. Clone the repo: git clone https://github.com/therealmighty/cyber_fishing.git.
 2. Connect your Flipper via USB.
 3. Run: ufbt launch.
 
